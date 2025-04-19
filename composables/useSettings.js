@@ -5,7 +5,23 @@ export const useSettings = async () => {
   const { data: settings } = await useAsyncData(
     'settings',
     () => findOne('setting', {
-      populate: '*',
+      populate: {
+        menu_items: {
+          populate: '*',
+        },
+        socials: {
+          populate: '*',
+        },
+        footer_logos: {
+          populate: '*',
+        },
+        footer_links: {
+          populate: '*',
+        },
+        footer_legal: {
+          populate: '*',
+        },
+      },
       locale: locale.value,
     }),
     {

@@ -15,7 +15,6 @@ const componentName = (name) => {
 </script>
 
 <template>
-  <pre>BLOCKS</pre>
   <Component
     :is="componentName(block.__component)"
     v-for="block in blocks"

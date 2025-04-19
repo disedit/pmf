@@ -1,15 +1,123 @@
 <script setup>
 const settings = await useSettings()
+const { mediaUrl } = useMedia()
 </script>
 
 <template>
-  <StrapiBlocksText
-    v-if="settings.data.footer_text"
-    :key="`footer-${settings.data.locale}`"
-    :nodes="settings.data.footer_text"
-  />
+  <footer class="text-white text-base">
+    <div class="bg-primary p-12 flex flex-col gap-12">
+      <div v-for="logos in settings.data.footer_logos" :key="logos.id">
+        <h2 class="font-semibold text-lg">{{ logos.label }}</h2>
+        <div>
+          <img
+            v-for="logo in logos.logos"
+            :key="logo.id"
+            :src="mediaUrl(logo.url)"
+            :alt="logo.alternativeText"
+            class="h-12 w-auto"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-900 footer-grid p-12 gap-12">
+      <div class="area-address flex flex-col gap-12 justify-between">
+        <a href="http://potries.org/" target="_blank">
+          <img
+            src="~/assets/images/ajuntament-potries.png"
+            alt="Ajuntament de Potries"
+            class="h-24"
+          >
+        </a>
+        <UtilsRichText
+          :key="`footer-${settings.data.locale}`"
+          :content="settings.data.footer_text"
+        />
+        <UtilsSocials
+          v-if="settings.data.socials"
+          :socials="settings.data.socials"
+        />
+      </div>
+      <div class="area-links leading-loose">
+        <ul>
+          <li v-for="link in settings.data.footer_links" :key="link.id">
+            <NuxtLink
+              :to="link.link"
+              class="hover:underline"
+            >
+              {{ link.label }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+      <div class="area-newsletter">
+        <div class="leading-loose">
+          Newsletter
+        </div>
+      </div>
+      <div class="area-legal flex xl:justify-end">
+        <ul class="flex gap-4 md:gap-6 flex-wrap">
+          <li v-for="legal in settings.data.footer_legal" :key="legal.id">
+            <NuxtLink
+              v-if="legal.link"
+              :to="legal.link"
+              class="hover:underline"
+            >
+              {{ legal.label }}
+            </NuxtLink>
+            <span v-else>
+              {{ legal.label }}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </template>
 
-<style>
+<style scoped>
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+    grid-template-areas:
+      "newsletter"
+      "links"  
+      "address"
+      "legal";
+}
 
+.area-address {
+  grid-area: address;
+}
+
+.area-links {
+  grid-area: links;
+}
+
+.area-newsletter {
+  grid-area: newsletter;
+}
+
+.area-legal {
+  grid-area: legal;
+  align-self: end;
+}
+
+@media (min-width: 48rem) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "newsletter links"
+      "address address"
+      "legal legal";
+  }
+}
+
+@media (min-width: 80rem) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "address links newsletter"
+      "address legal legal";
+  }
+}
 </style>
