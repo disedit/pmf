@@ -55,11 +55,7 @@ useHead({ title })
 </script>
 
 <template>
-  <pre>
-    {{ page }}
-  </pre>
+  <UtilsDynamicBlocks
+    :blocks="page.blocks"
+  />
 </template>
-
-<style>
-
-</style>
