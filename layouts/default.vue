@@ -1,9 +1,7 @@
 <template>
   <div>
     <SiteNav />
-    <main class="min-h-viewport">
-      <NuxtPage />
-    </main>
+    <NuxtPage />
     <SiteFooter />
   </div>
 </template>

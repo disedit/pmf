@@ -21,6 +21,9 @@ export const useSettings = async () => {
         footer_legal: {
           populate: '*',
         },
+        seo: {
+          populate: '*',
+        },
       },
       locale: locale.value,
     }),
