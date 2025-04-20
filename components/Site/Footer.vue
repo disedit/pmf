@@ -1,10 +1,10 @@
 <script setup>
 const settings = await useSettings()
-const { mediaUrl } = useMedia()
+const { mediaUrl } = useUtils()
 </script>
 
 <template>
-  <footer class="text-white text-base">
+  <footer class="footer relative text-white text-base">
     <div class="bg-primary p-12 flex flex-col gap-12">
       <div v-for="logos in settings.data.footer_logos" :key="logos.id">
         <h2 class="font-semibold text-lg">{{ logos.label }}</h2>
@@ -75,6 +75,10 @@ const { mediaUrl } = useMedia()
 </template>
 
 <style scoped>
+.footer {
+  z-index: 10000;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;

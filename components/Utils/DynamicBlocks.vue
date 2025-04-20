@@ -6,12 +6,7 @@ defineProps({
   },
 })
 
-const componentName = (name) => {
-  return name
-    .split(/[.-]/)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join('')
-}
+const { componentName } = useUtils()
 </script>
 
 <template>
@@ -20,5 +15,6 @@ const componentName = (name) => {
     v-for="block in blocks"
     :key="block.id"
     :block="block"
+    :id="`${componentName(block.__component)}-${block.id}`"
   />
 </template>

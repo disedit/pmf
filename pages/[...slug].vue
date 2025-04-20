@@ -59,7 +59,7 @@ useHead({ title })
 </script>
 
 <template>
-  <main class="min-h-viewport">
+  <main class="min-h-viewport bg-white">
     <UtilsDynamicBlocks
       :blocks="page.blocks"
     />
@@ -67,6 +67,9 @@ useHead({ title })
       v-if="page.ctas && page.ctas.length"
       :ctas="page.ctas"
       class="sticky bottom-0 p-site justify-center"
+    />
+    <UtilsSideTitles
+      :blocks="page.blocks"
     />
   </main>
 </template>

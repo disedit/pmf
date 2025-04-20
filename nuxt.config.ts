@@ -25,10 +25,12 @@ export default defineNuxtConfig({
 
   i18n: {
     locales: [
-      { code: 'ca', language: 'ca-ES' },
-      { code: 'es', language: 'es-ES' },
-      { code: 'en', language: 'en-US' }
+      { code: 'ca', language: 'ca-ES', file: 'ca.js' },
+      { code: 'es', language: 'es-ES', file: 'es.js' },
+      { code: 'en', language: 'en-US', file: 'en.js' }
     ],
     defaultLocale: 'ca',
+    langDir: '',
+    baseUrl: 'https://musicfest.potries.org'
   }
 })

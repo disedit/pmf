@@ -7,9 +7,9 @@ defineProps({ block: { type: Object, required: true }})
     <div
       v-for="card in block.blocks"
       :key="card.id"
-      class="info grid grid-cols-2 min-h-[40vh]"
+      class="info grid grid-cols-2 min-h-[50vh]"
     >
-      <div class="info-text p-site md:p-24">
+      <div class="info-text p-site md:py-16 md:px-24">
         <h3 class="text-xl font-semibold mb-6">
           {{ card.heading }}
         </h3>

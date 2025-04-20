@@ -38,7 +38,7 @@ const setActive = (id) => {
         </li>
       </ul>
     </div>
-    <div class="bg-gray-200 relative">
+    <div class="bg-black relative">
       <Transition name="fade">
         <div v-if="active" class="bg-black absolute inset-0 hidden md:block">
           <template
