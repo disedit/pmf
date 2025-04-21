@@ -1,5 +1,6 @@
 <script setup>
 const props = defineProps({ block: { type: Object, required: true }})
+const img = useImage()
 
 const selectedFilter = ref(null)
 
@@ -7,6 +8,8 @@ const filteredConcerts = computed(() => {
   if (!selectedFilter.value) return props.block.concerts
   return props.block.concerts.filter(concert => concert.filter_value === selectedFilter.value)
 })
+
+const { humanDate, humanTime } = useDate()
 </script>
 
 <template>
@@ -25,7 +28,8 @@ const filteredConcerts = computed(() => {
       <article
         v-for="concert in filteredConcerts"
         :key="concert.id"
-        class="concert flex aspect-square bg-gray-100 relative"
+        class="concert flex aspect-square bg-gray-100 relative bg-cover bg-center"
+        :style="{ backgroundImage: concert.picture ? `url(${img(concert.picture.url, { width: 800 })})` : null }"
       >
         <a
           :href="concert.cta_url"
@@ -36,10 +40,10 @@ const filteredConcerts = computed(() => {
             {{ concert.artist }}
           </h3>
           <p class="text-md">
-            {{ concert.date }}
+            {{ humanDate(concert.date, $i18n.locale) }}
           </p>
           <p class="text-md">
-            {{ concert.date }}
+            {{ humanTime(concert.date, $i18n.locale) }}
           </p>
           <p class="text-md">
             {{ concert.venue }}

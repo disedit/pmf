@@ -18,8 +18,12 @@ defineProps({ block: { type: Object, required: true }})
           class="text-md leading-tight"
         />
       </div>
-      <div :class="['info-picture bg-gray-100', { 'order-first': card.inverted }]">
-
+      <div :class="['relative bg-gray-100 z-[1]', { 'order-first': card.inverted }]">
+        <UtilsMedia
+          v-if="card.picture"
+          :src="card.picture.url"
+          class="absolute inset-0 z-[1]"
+        />
       </div>
     </div>
   </section>

@@ -25,13 +25,14 @@ onMounted(() => {
   }).mount({ AutoScroll })
 
   splide.on('click', async ({ slide }) => {
+    if (!slide.dataset.to) return
     await navigateTo(slide.dataset.to)
   })
 })
 </script>
 
 <template>
-  <section class="splide cursor-pointer" ref="scroller">
+  <section class="splide" ref="scroller">
     <div :class="['splide__track', { 'my-6': gap }]">
       <ul :class="['splide__list flex', { 'gap-6': gap }]">
         <slot />

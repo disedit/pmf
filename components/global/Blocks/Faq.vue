@@ -40,7 +40,7 @@ const setActive = (id) => {
     </div>
     <div class="bg-black relative">
       <Transition name="fade">
-        <div v-if="active" class="bg-black absolute inset-0 hidden md:block">
+        <div v-if="active" class="bg-black absolute inset-0 hidden md:block z-[2]">
           <template
             v-for="item in block.items"
             :key="item.id"
@@ -50,12 +50,17 @@ const setActive = (id) => {
                 v-if="active === item.id"
                 class="absolute inset-0 text-md p-site md:p-8"
               >
-                <UtilsRichText :content="item.content" />
+                <UtilsRichText :content="item.content" class="w-[95%]" />
               </div>
             </Transition>
           </template>
         </div>
       </Transition>
+      <UtilsMedia
+        v-if="block.picture"
+        :src="block.picture.url"
+        class="absolute inset-0 z-[1]"
+      />
     </div>
   </section>
 </template>

@@ -16,8 +16,36 @@ const { data: results } = await useAsyncData(
     },
     populate: {
       blocks: {
-        populate: '*',
+      on: {
+        'blocks.home-hero': {
+          populate: {
+           'blocks': {
+             populate: ['background']
+           }
+         }
+        },
+        'blocks.page-hero': {
+          populate: '*'
+        },
+        'blocks.info-blocks': {
+          populate: {
+            'blocks': {
+              populate: ['picture']
+            }
+          }
+        },
+        'blocks.grid': {
+          populate: {
+            'concerts': {
+              populate: ['picture']
+            }
+          }
+        },
+        'blocks.faq': {
+          populate: ['items','picture']
+        },
       },
+    },
       ctas: {
         populate: '*',
       },
@@ -66,7 +94,7 @@ useHead({ title })
     <UtilsCtas
       v-if="page.ctas && page.ctas.length"
       :ctas="page.ctas"
-      class="sticky bottom-0 p-site justify-center"
+      class="sticky bottom-0 p-site justify-center z-[1000]"
     />
     <UtilsSideTitles
       :blocks="page.blocks"

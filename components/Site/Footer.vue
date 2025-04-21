@@ -1,6 +1,5 @@
 <script setup>
 const settings = await useSettings()
-const { mediaUrl } = useUtils()
 </script>
 
 <template>
@@ -9,13 +8,13 @@ const { mediaUrl } = useUtils()
       <div v-for="logos in settings.data.footer_logos" :key="logos.id">
         <h2 class="font-semibold text-lg">{{ logos.label }}</h2>
         <div>
-          <img
+          <NuxtImg
             v-for="logo in logos.logos"
             :key="logo.id"
-            :src="mediaUrl(logo.url)"
+            :src="logo.url"
             :alt="logo.alternativeText"
             class="h-12 w-auto"
-          >
+          />
         </div>
       </div>
     </div>

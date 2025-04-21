@@ -32,5 +32,15 @@ export default defineNuxtConfig({
     defaultLocale: 'ca',
     langDir: '',
     baseUrl: 'https://musicfest.potries.org'
-  }
+  },
+
+  image: process.env.NUXT_PUBLIC_NODE_ENV === 'production' ? {
+    provider: 'netlify',
+    domains: ['pmf.disedit.com']
+  } : {
+    provider: 'strapi',
+    strapi: {
+      baseURL: 'https://pmf.disedit.com/'
+    }
+  },
 })
