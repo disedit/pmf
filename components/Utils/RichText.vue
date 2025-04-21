@@ -1,12 +1,12 @@
 <script setup>
 defineProps({
   content: { type: Object, default: null },
-  underlineLinks: { type: Boolean, default: false },
+  prose: { type: Boolean, default: false },
 })
 </script>
 
 <template>
-  <div v-if="content" :class="['rich-text', { 'underline-links': underlineLinks }]">
+  <div v-if="content" :class="['rich-text', { prose }]">
     <StrapiBlocksText
       :nodes="content"
     />
@@ -15,13 +15,15 @@ defineProps({
 
 <style>
 .rich-text {
-  &.underline-links a,
+  &.prose a,
   a:hover {
     text-decoration: underline;
   }
 
-  p:not(:last-child) {
-    margin-bottom: 1em;
+  &.prose {
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
   }
 }
 </style>

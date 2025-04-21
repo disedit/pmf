@@ -9,7 +9,7 @@ const setActive = (id) => {
 </script>
 
 <template>
-  <section class="bg-primary grid md:grid-cols-2 text-white focus-white">
+  <section class="bg-primary grid md:grid-cols-2 text-white focus-white selection-invert">
     <div class="p-8 pe-10 md:px-24 md:py-16">
       <h2 class="text-xl font-semibold mb-4">
         {{ block.title }}

@@ -49,13 +49,23 @@ html {
   scroll-behavior: smooth;
 }
 
-*:focus {
+*:focus-visible {
   outline: 3px solid var(--color-focus, var(--color-primary));
   outline-offset: 3px;
 }
 
+::selection {
+  color: var(--color-selection-foreground, var(--color-white));
+  background-color: var(--color-selection-background, var(--color-primary));
+}
+
 .focus-white {
   --color-focus: var(--color-white);
+}
+
+.selection-invert {
+  --color-selection-background: var(--color-white);
+  --color-selection-foreground: var(--color-primary);
 }
 
 .fade-enter-active,

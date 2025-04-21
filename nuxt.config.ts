@@ -15,7 +15,10 @@ export default defineNuxtConfig({
     'nuxt-strapi-blocks-renderer'
   ],
 
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    './node_modules/@splidejs/splide/dist/css/splide-core.min.css'
+  ],
 
   vite: {
     plugins: [

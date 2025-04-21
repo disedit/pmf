@@ -27,6 +27,7 @@ const isVideo = computed(() => props.media.mime.startsWith('video/'))
       :src="media.url"
       :sizes="sizes"
       class="media-item"
+      :alt="media.alternativeText || ''"
     />
   </div>
 </template>

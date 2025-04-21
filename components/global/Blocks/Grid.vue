@@ -65,11 +65,6 @@ const { humanDate, humanTime } = useDate()
   opacity: 0;
 }
 
-.concert:focus-within {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
 .concert:hover .concert-info,
 .concert:focus-within .concert-info {
   opacity: 1;

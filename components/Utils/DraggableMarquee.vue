@@ -1,7 +1,6 @@
 <script setup>
 import { Splide } from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import "../../node_modules/@splidejs/splide/dist/css/splide-core.min.css";
 
 const props = defineProps({
   speed: { type: Number, default: 1 },

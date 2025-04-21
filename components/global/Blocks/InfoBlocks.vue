@@ -21,7 +21,7 @@ defineProps({ block: { type: Object, required: true }})
         <UtilsRichText
           :content="card.text"
           class="text-md leading-tight"
-          underline-links
+          prose
         />
       </div>
       <div :class="[
