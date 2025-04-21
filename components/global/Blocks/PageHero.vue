@@ -4,7 +4,7 @@ defineProps({ block: { type: Object, required: true }})
 
 <template>
   <section class="min-h-viewport bg-gray-400 text-white flex items-center justify-center relative">
-    <h1 class="text-2xl font-medium relative z-[10]">
+    <h1 class="text-2xl font-medium relative z-[10] p-site text-center leading-tight">
       {{ block.title }}
     </h1>
     <UtilsMedia

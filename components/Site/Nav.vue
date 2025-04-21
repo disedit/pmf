@@ -4,7 +4,7 @@ const settings = await useSettings()
 
 <template>
   <header>
-    <SiteNavMarquee>
+    <SiteNavMarquee :duration="settings.data.marquee_speed">
       {{ settings.data.marquee_text }}
     </SiteNavMarquee>
     <nav class="flex items-center gap-12 py-3 px-site">

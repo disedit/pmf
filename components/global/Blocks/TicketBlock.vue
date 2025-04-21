@@ -4,11 +4,11 @@ defineProps({ block: { type: Object, required: true }})
 
 <template>
   <section class="p-site md:p-24">
-    <div class="max-w-[2000px] mx-auto flex gap-12">
+    <div class="max-w-[2000px] mx-auto flex flex-col md:flex-row gap-12">
       <article
         v-for="card in block.blocks"
         :key="card.id"
-        class="flex flex-col bg-gray-100 text-white basis-1/2 rounded-lg p-site md:p-10"
+        class="flex flex-col bg-gray-100 text-white basis-1/2 rounded-xl p-site md:p-10"
       >
         <div class="text-lg font-bold leading-tight my-6 md:my-10 text-center">
           <h2>

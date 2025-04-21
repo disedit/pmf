@@ -3,7 +3,8 @@ import { Splide } from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import "../../node_modules/@splidejs/splide/dist/css/splide-core.min.css";
 
-defineProps({
+const props = defineProps({
+  speed: { type: Number, default: 1 },
   gap: { type: Boolean, default: false }
 })
 
@@ -19,7 +20,7 @@ onMounted(() => {
     pauseOnFocus: false,
     snap: false,
     autoScroll: {
-      speed: .5,
+      speed: props.speed,
       pauseOnHover: false,
     },
   }).mount({ AutoScroll })

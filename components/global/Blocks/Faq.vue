@@ -9,8 +9,8 @@ const setActive = (id) => {
 </script>
 
 <template>
-  <section class="bg-primary grid md:grid-cols-2 text-white">
-    <div class="p-site md:p-12">
+  <section class="bg-primary grid md:grid-cols-2 text-white focus-white">
+    <div class="p-8 pe-10 md:px-24 md:py-16">
       <h2 class="text-xl font-semibold mb-4">
         {{ block.title }}
       </h2>
@@ -20,8 +20,12 @@ const setActive = (id) => {
           :key="item.id"
         >
           <button
-            class="flex font-bold text-md justify-between w-full py-3 cursor-pointer text-left"
+            type="button"
+            class="flex font-bold text-md justify-between w-full py-3 gap-3 cursor-pointer text-left leading-tight"
             @click="setActive(item.id)"
+            :id="`faq-${block.id}-heading-${item.id}`"
+            :aria-expanded="active === item.id ? 'true' : 'false'"
+            :aria-controls="`faq-${block.id}-content-${item.id}`"
           >
             <h3>
               {{ item.heading }}
@@ -31,14 +35,20 @@ const setActive = (id) => {
             </span>
           </button>
           <Transition name="slide">
-            <div v-if="active === item.id" class="md:hidden text-base">
+            <div
+              v-if="active === item.id"
+              class="md:sr-only text-base"
+              :id="`faq-${block.id}-${item.id}`"
+              :aria-labelledby="`faq-${block.id}-heading-${item.id}`"
+              role="region"
+            >
               <UtilsRichText :content="item.content" />
             </div>
           </Transition>
         </li>
       </ul>
     </div>
-    <div class="bg-black relative">
+    <div class="bg-black relative" aria-hidden="true">
       <Transition name="fade">
         <div v-if="active" class="bg-black absolute inset-0 hidden md:block z-[2]">
           <template

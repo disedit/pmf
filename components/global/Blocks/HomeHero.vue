@@ -8,7 +8,7 @@ const img = useImage()
 
 <template>
   <section>
-    <UtilsDraggableMarquee :gap="block.gap">
+    <UtilsDraggableMarquee :gap="block.gap" :speed="block.speed">
       <li
         v-for="slide in block.blocks"
         :key="slide.id"

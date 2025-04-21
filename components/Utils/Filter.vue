@@ -17,7 +17,7 @@ const filters = computed(() => {
 </script>
 
 <template>
-  <ul class="filter flex flex-wrap justify-center text-md">
+  <ul class="filter gap-y-4 flex flex-wrap justify-center text-md">
     <li>
       <button @click="value = null" :class="{ active: value === null }">
         {{ $t('filters.all') }}
