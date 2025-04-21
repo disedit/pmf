@@ -7,11 +7,14 @@ defineProps({ block: { type: Object, required: true }})
     <h1 class="text-2xl font-medium relative z-[10]">
       {{ block.title }}
     </h1>
-
     <UtilsMedia
       v-if="block.background"
-      :src="block.background.url"
+      :media="block.background"
       class="absolute inset-0 z-[1] w-full h-full"
+    />
+    <div
+      v-if="block.overlay"
+      class="absolute inset-0 z-[2] bg-black/40"
     />
   </section>
 </template>

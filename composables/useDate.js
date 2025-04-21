@@ -5,7 +5,7 @@ const locales = { en: enGB, es, ca }
 export const useDate = () => {
   return {
     humanDate: (date, locale) => {
-      return format(date, 'EEEE, d LLLL', {
+      return format(date, 'EEEE, dd LLLL', {
         locale: locales[locale],
       })
     },

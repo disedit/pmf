@@ -1,17 +1,31 @@
 <script setup>
-defineProps({
-  src: {
-    type: String,
+const props = defineProps({
+  media: {
+    type: Object,
     required: true,
   },
+  sizes: {
+    type: String,
+    default: null,
+  }
 })
+
+const { mediaUrl } = useUtils()
+const isVideo = computed(() => props.media.mime.startsWith('video/'))
 </script>
 
 <template>
   <div class="flex">
+    <video
+      v-if="isVideo"
+      :src="mediaUrl(media.url)"
+      playsinline muted autoplay loop
+      class="media-item" />
     <NuxtPicture
+      v-else
       format="avif,webp"
-      :src="src"
+      :src="media.url"
+      :sizes="sizes"
       class="media-item"
     />
   </div>

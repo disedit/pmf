@@ -44,6 +44,9 @@ const { data: results } = await useAsyncData(
         'blocks.faq': {
           populate: ['items','picture']
         },
+        'blocks.ticket-block': {
+          populate: ['blocks']
+        },
       },
     },
       ctas: {

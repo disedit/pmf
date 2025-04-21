@@ -58,7 +58,7 @@ const setActive = (id) => {
       </Transition>
       <UtilsMedia
         v-if="block.picture"
-        :src="block.picture.url"
+        :media="block.picture"
         class="absolute inset-0 z-[1]"
       />
     </div>

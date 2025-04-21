@@ -1,13 +1,9 @@
-<template>
-  <div>
-    
-  </div>
-</template>
-
-<script lang="ts" setup>
-
+<script setup>
+const localePath = useLocalePath()
 </script>
 
-<style>
-
-</style>
+<template>
+  <NuxtLink :to="localePath('/')">
+    <img src="~/assets/images/logo.png" alt="Potries Music Fest" class="h-[2rem]">
+  </NuxtLink>
+</template>

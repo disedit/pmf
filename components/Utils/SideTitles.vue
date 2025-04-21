@@ -13,7 +13,7 @@ onMounted(() => {
   props.blocks.forEach(item => {
     const title = item.side_title || item.title || item.heading
     if (!title) return
-    const blockId = componentName(item.__component) + '-' + item.id
+    const blockId = item.anchor_id || componentName(item.__component) + '-' + item.id
     elements[blockId] = {
       visible: false,
       observer: new IntersectionObserver(observe, {rootMargin: '-50%'}),

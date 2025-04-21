@@ -15,6 +15,6 @@ const { componentName } = useUtils()
     v-for="block in blocks"
     :key="block.id"
     :block="block"
-    :id="`${componentName(block.__component)}-${block.id}`"
+    :id="block.anchor_id || `${componentName(block.__component)}-${block.id}`"
   />
 </template>
