@@ -1,7 +1,22 @@
+<script setup>
+defineProps({
+  size: {
+    type: String,
+    default: 'sm',
+  },
+})
+</script>
+
 <template>
   <NuxtLink
     v-bind="$attrs"
-    class="bg-primary rounded-lg text-white font-medium text-sm px-[1.75em] py-[.75em] uppercase"
+    :class="[
+      'bg-magenta rounded-lg text-white font-medium px-[1.75em] py-[.75em] uppercase',
+      {
+        'text-sm': size === 'sm',
+        'text-base': size === 'base',
+      }
+    ]"
   >
     <slot />
   </NuxtLink>

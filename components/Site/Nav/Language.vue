@@ -9,7 +9,7 @@ const abbrs = {
 </script>
 
 <template>
-  <ul aria-label="Idioma / Language" class="flex language text-sm font-light">
+  <ul aria-label="Idioma / Language" class="language text-sm font-light">
     <li v-for="lang in locales" :key="lang.code">
       <NuxtLink
         :to="switchLocalePath(lang.code)"

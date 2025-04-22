@@ -56,9 +56,6 @@ const { data: results } = await useAsyncData(
           },
           'blocks.spacer': {
             populate: '*'
-          },
-          'blocks.posters': {
-            populate: ['posters']
           }
         },
     },
@@ -100,6 +97,12 @@ useServerSeoMeta({
   ogType: 'website'
 })
 useHead({ title })
+
+const styleOverride = `<style>:root{--color-primary: ${page.primary_color || 'var(--color-magenta)'}}</style>`
+
+onMounted(() => {
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', page.primary_color || '#E11147')
+})
 </script>
 
 <template>
@@ -115,5 +118,6 @@ useHead({ title })
     <UtilsSideTitles
       :blocks="page.blocks"
     />
+    <div v-html="styleOverride" />
   </main>
 </template>

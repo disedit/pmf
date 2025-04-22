@@ -3,7 +3,10 @@ const settings = await useSettings()
 </script>
 
 <template>
-  <footer class="footer relative text-white text-base">
+  <footer class="footer relative z-[100] text-white text-base">
+    <SiteMarquee :duration="settings.data.marquee_speed" background="bg-gray-400" padding="py-2">
+      {{ settings.data.footer_marquee }}
+    </SiteMarquee>
     <div class="bg-primary p-12 flex flex-col gap-12">
       <div v-for="logos in settings.data.footer_logos" :key="logos.id">
         <h2 class="font-semibold text-lg mb-6">{{ logos.label }}</h2>
@@ -22,8 +25,8 @@ const settings = await useSettings()
       <div class="area-address flex flex-col gap-12 justify-between">
         <a href="http://potries.org/" target="_blank">
           <img
-            src="~/assets/images/ajuntament-potries.png"
-            alt="Ajuntament de Potries"
+            src="~/assets/images/logo-inverted.png"
+            alt="Potries Music Fest"
             class="h-18 md:h-24"
           >
         </a>
@@ -74,10 +77,6 @@ const settings = await useSettings()
 </template>
 
 <style scoped>
-.footer {
-  z-index: 10000;
-}
-
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;

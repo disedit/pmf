@@ -3,14 +3,22 @@ defineProps({
   duration: {
     type: Number,
     default: 4
+  },
+  background: {
+    type: String,
+    default: ''
+  },
+  padding: {
+    type: String,
+    default: ''
   }
 })
 </script>
 
 <template>
   <ClientOnly>
-    <Vue3Marquee clone :duration="duration" class="bg-primary text-white font-medium text-base flex">
-      <span class="flex">
+    <Vue3Marquee clone :duration="duration" :class="[background, 'text-white font-medium text-base flex']">
+      <span :class="['flex', padding]">
         <span>
           <slot />
         </span>
