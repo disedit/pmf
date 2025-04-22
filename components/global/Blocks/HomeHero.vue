@@ -7,13 +7,13 @@ const img = useImage()
 </script>
 
 <template>
-  <section>
+  <section class="marquee-scroller">
     <UtilsDraggableMarquee :gap="block.gap" :speed="block.speed">
       <li
         v-for="slide in block.blocks"
         :key="slide.id"
         :class="[
-          'splide__slide item relative flex bg-gray-200 h-viewport w-[67vh] shrink-0 items-center p-site text-lg bg-cover bg-center',
+          'splide__slide item relative flex bg-gray-200 h-viewport w-[67vh] shrink-0 items-center p-site text-md bg-cover bg-center',
           { 'cursor-pointer': !!slide.link }
         ]"
         :data-to="slide.link"
@@ -28,15 +28,25 @@ const img = useImage()
   </section>
 </template>
 
-<style scoped>
-.item {
-  .text {
-    opacity: 0;
-  }
-
-  &:hover {
+<style>
+.marquee-scroller {
+  .item {
     .text {
-      opacity: 1;
+      opacity: 0;
+
+      p {
+        line-height: 1.25;
+      }
+
+      h2, b, strong {
+        font-weight: 700;
+      }
+    }
+
+    &:hover {
+      .text {
+        opacity: 1;
+      }
     }
   }
 }

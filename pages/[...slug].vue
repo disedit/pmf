@@ -16,45 +16,51 @@ const { data: results } = await useAsyncData(
     },
     populate: {
       blocks: {
-      on: {
-        'blocks.home-hero': {
-          populate: {
-           'blocks': {
-             populate: ['background']
-           }
-         }
-        },
-        'blocks.page-hero': {
-          populate: '*'
-        },
-        'blocks.info-blocks': {
-          populate: {
-            'blocks': {
-              populate: ['picture']
+        on: {
+          'blocks.home-hero': {
+            populate: {
+              'blocks': {
+                populate: ['background']
+              }
             }
+          },
+          'blocks.page-hero': {
+            populate: '*'
+          },
+          'blocks.info-blocks': {
+            populate: {
+              'blocks': {
+                populate: ['picture']
+              }
+            }
+          },
+          'blocks.grid': {
+            populate: {
+              'concerts': {
+                populate: ['picture']
+              }
+            }
+          },
+          'blocks.faq': {
+            populate: ['items','picture']
+          },
+          'blocks.ticket-block': {
+            populate: ['blocks']
+          },
+          'blocks.archive': {
+            populate: {
+              'posters': {
+                populate: ['picture']
+              }
+            }
+          },
+          'blocks.spacer': {
+            populate: '*'
+          },
+          'blocks.posters': {
+            populate: ['posters']
           }
         },
-        'blocks.grid': {
-          populate: {
-            'concerts': {
-              populate: ['picture']
-            }
-          }
-        },
-        'blocks.faq': {
-          populate: ['items','picture']
-        },
-        'blocks.ticket-block': {
-          populate: ['blocks']
-        },
-        'blocks.archive': {
-          populate: {
-            'posters': {
-              populate: ['picture']
-            }
-          }
-        },
-      },
     },
       ctas: {
         populate: '*',

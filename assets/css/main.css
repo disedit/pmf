@@ -12,7 +12,7 @@
   --color-gray-900: #1B1B1B;
   --text-sm: clamp(0.8rem, 0.08vi + 0.78rem, 0.84rem);
   --text-base: clamp(1rem, 0.23vi + 0.94rem, 1.05rem);
-  --text-md: clamp(1.19rem, 0.43vi + 1.11rem, 1.44rem);
+  --text-md: clamp(1.19rem, 0.43vi + 1.15rem, 1.54rem);
   --text-lg: clamp(1.56rem, 0.79vi + 1.36rem, 2rem);
   --text-xl: clamp(1.95rem, 1.29vi + 1.63rem, 2.66rem);
   --text-2xl: clamp(2.44rem, 2.02vi + 1.94rem, 3.55rem);
@@ -20,7 +20,7 @@
   --text-4xl: clamp(3.5rem, 4.54vi + 2.68rem, 6.31rem);
   --text-5xl: clamp(3rem, 5vi + .25rem, 7.6rem);
   --spacing-site: 2rem;
-  --spacing-navbar: 5.14875rem;
+  --spacing-navbar: 5.07375rem;
   --spacing-viewport: calc(100svh - var(--spacing-navbar));
   --color-lime-*: initial;
   --color-red-*: initial;

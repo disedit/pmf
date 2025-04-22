@@ -3,7 +3,7 @@ defineProps({ block: { type: Object, required: true }})
 </script>
 
 <template>
-  <section class="py-site md:py-18">
+  <section>
     <article
       v-for="card in block.blocks"
       :key="card.id"
