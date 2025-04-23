@@ -6,7 +6,7 @@ const props = defineProps({
   },
   sizes: {
     type: String,
-    default: null,
+    default: '100vw md:800px lg:1200px',
   }
 })
 

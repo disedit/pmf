@@ -4,6 +4,7 @@ import { UtilsRichText } from '#components';
 defineProps({ block: { type: Object, required: true }})
 
 const img = useImage()
+const { mediaUrl } = useUtils()
 </script>
 
 <template>
@@ -17,7 +18,7 @@ const img = useImage()
           { 'cursor-pointer': !!slide.link }
         ]"
         :data-to="slide.link"
-        :style="{ backgroundImage: slide.background ? `url(${img(slide.background.url, { width: 800 })})` : null }"
+        :style="{ backgroundImage: slide.background ? `url(${img(mediaUrl(slide.background.url), { width: 800 })})` : null }"
       >
         <UtilsRichText
           :content="slide.text"
