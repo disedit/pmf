@@ -4,6 +4,8 @@ import 'vue3-carousel/carousel.css'
 
 const props = defineProps({ block: { type: Object, required: true }})
 
+const { mediaUrl } = useUtils()
+
 const carouselConfig = {
   itemsToShow: props.block.stacked_slides ? 5 : 3.5,
   wrapAround: !props.block.stacked_slides,
@@ -25,7 +27,7 @@ const carouselConfig = {
         <div>
           <div class="slide-image-container relative flex items-center">
             <NuxtImg
-              :src="poster.picture.url"
+              :src="mediaUrl(poster.picture.url)"
               width="400"
               class="slide-image"
             />

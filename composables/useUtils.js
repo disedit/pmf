@@ -5,6 +5,9 @@ export const useUtils = () => {
     mediaUrl: (path) => {
       return runtimeConfig.public.strapi.url + path
     },
+    localUrl: (path) => {
+      return runtimeConfig.public.strapi.url + path
+    },
     componentName: (name) => {
       return name
         .split(/[.-]/)

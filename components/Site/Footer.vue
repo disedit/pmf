@@ -1,5 +1,6 @@
 <script setup>
 const settings = await useSettings()
+const { mediaUrl } = useUtils()
 </script>
 
 <template>
@@ -14,7 +15,7 @@ const settings = await useSettings()
           <NuxtImg
             v-for="logo in logos.logos"
             :key="logo.id"
-            :src="logo.url"
+            :src="mediaUrl(logo.url)"
             :alt="logo.alternativeText"
             class="h-[3rem] md:h-[4rem] w-auto"
           />

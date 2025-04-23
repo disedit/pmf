@@ -10,7 +10,7 @@ const props = defineProps({
   }
 })
 
-const { mediaUrl } = useUtils()
+const { mediaUrl, localUrl } = useUtils()
 const isVideo = computed(() => props.media.mime.startsWith('video/'))
 </script>
 
@@ -18,13 +18,13 @@ const isVideo = computed(() => props.media.mime.startsWith('video/'))
   <div class="flex">
     <video
       v-if="isVideo"
-      :src="mediaUrl(media.url)"
+      :src="localUrl(media.url)"
       playsinline muted autoplay loop
       class="media-item" />
     <NuxtPicture
       v-else
       format="avif,webp"
-      :src="media.url"
+      :src="mediaUrl(media.url)"
       :sizes="sizes"
       class="media-item"
       :alt="media.alternativeText || ''"
