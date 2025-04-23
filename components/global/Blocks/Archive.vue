@@ -23,24 +23,22 @@ const carouselConfig = {
   ]">
     <h2 v-if="block.heading" class="text-center p-site text-lg font-bold mb-6">{{ block.heading }}</h2>
     <Carousel v-bind="carouselConfig">
-      <Slide v-for="poster in block.posters" :key="poster">
-        <div>
-          <div class="slide-image-container relative flex items-center">
-            <NuxtImg
-              :src="mediaUrl(poster.picture.url)"
-              width="400"
-              class="slide-image"
-            />
-            <div v-if="poster.hover_heading || poster.hover_heading || poster.hover_details" class="hoverable-info flex flex-col gap-2 bg-gray-500/70 text-white">
-              <h4 class="text-lg font-semibold">{{ poster.hover_heading }}</h4>
-              <p class="text-md">{{ poster.hover_description }}</p>
-              <div class="mt-auto text-md whitespace-nowrap">{{ poster.hover_details }}</div>
-            </div>
+      <Slide v-for="poster in block.posters" :key="poster" class="flex-col">
+        <div class="slide-image-container relative flex items-center">
+          <NuxtImg
+            :src="mediaUrl(poster.picture.url)"
+            width="400"
+            class="slide-image"
+          />
+          <div v-if="poster.hover_heading || poster.hover_heading || poster.hover_details" class="hoverable-info flex flex-col gap-2 bg-gray-500/70 text-white">
+            <h4 class="text-lg font-semibold">{{ poster.hover_heading }}</h4>
+            <p class="text-md">{{ poster.hover_description }}</p>
+            <div class="mt-auto text-md whitespace-nowrap">{{ poster.hover_details }}</div>
           </div>
-          <h3 class="text-lg font-semibold text-center mt-5 transiton">
-            {{ poster.label }}
-          </h3>
         </div>
+        <h3 class="text-lg font-semibold text-center mt-5 transiton">
+          {{ poster.label }}
+        </h3>
       </Slide>
     </Carousel>
   </section>
