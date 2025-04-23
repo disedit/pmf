@@ -83,6 +83,7 @@ const carouselConfig = {
 
   .slide-image-container {
     height: 30vw;
+    width: 100%;
   }
 
   .carousel__slide--active {
