@@ -35,7 +35,7 @@ const { humanDate, humanTime } = useDate()
         <a
           :href="concert.cta_url"
           target="_blank"
-          class="concert-info absolute flex flex-col bg-black/25 inset-0 p-6 text-white leading-tight transition"
+          class="concert-info absolute flex flex-col bg-gray-500/70 inset-0 p-6 text-white leading-tight transition"
         >
           <h3 class="font-semibold text-lg mb-2">
             {{ concert.artist }}
