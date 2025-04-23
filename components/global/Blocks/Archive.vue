@@ -80,7 +80,7 @@ const carouselConfig = {
 .stacked-slides {
   .slide-image {
     box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
-    width: auto;
+    width: 100%;
   }
 
   .slide-image-container {
