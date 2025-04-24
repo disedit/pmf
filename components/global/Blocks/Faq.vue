@@ -70,6 +70,7 @@ const setActive = (id) => {
         v-if="block.picture"
         :media="block.picture"
         class="absolute inset-0 z-[1]"
+        sizes="100vw md:400px lg:700px"
       />
     </div>
   </section>

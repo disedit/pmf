@@ -32,6 +32,7 @@ defineProps({ block: { type: Object, required: true }})
           v-if="card.picture"
           :media="card.picture"
           class="absolute inset-0 z-[1]"
+          sizes="100vw md:400px lg:700px"
         />
       </div>
     </article>
