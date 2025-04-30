@@ -75,6 +75,7 @@ function toggleMenu() {
   border-top: 2px var(--color-black) solid;
   width: 2rem;
   transition: .5s ease;
+  flex-shrink: 0;
 }
 
 .toggle[aria-expanded='true'] {

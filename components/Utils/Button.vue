@@ -11,7 +11,7 @@ defineProps({
   <NuxtLink
     v-bind="$attrs"
     :class="[
-      'bg-magenta rounded-lg text-white font-medium px-[1.75em] py-[.75em] uppercase',
+      'inline-block bg-magenta rounded-lg text-white font-medium px-[1.75em] py-[.75em] uppercase',
       {
         'text-sm': size === 'sm',
         'text-base': size === 'base',

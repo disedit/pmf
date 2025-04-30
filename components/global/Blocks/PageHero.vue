@@ -21,7 +21,7 @@ const { mediaUrl } = useUtils()
         class="absolute inset-0 z-[2] bg-black/40"
       />
     </div>
-    <div v-if="block.poster?.url" class="page-header-poster grid md:grid-cols-2 sticky top-navbar z-[5]">
+    <div v-if="block.poster?.url" class="page-header-poster grid md:grid-cols-2 sticky top-navbar md:z-[5]">
       <UtilsMedia
         :media="block.poster"
         class="h-viewport w-auto"
@@ -30,7 +30,7 @@ const { mediaUrl } = useUtils()
     </div>
     <div
       v-if="block.poster?.url"
-      class="grid md:grid-cols-2 sticky top-navbar bg-primary z-[4] bg-cover"
+      class="grid md:grid-cols-2 sticky top-navbar bg-primary md:z-[4] bg-cover"
       :style="{
         backgroundImage: block.poster_background ? `url(${img(mediaUrl(block.poster_background.url), { width: 1400 })})` : null
       }"

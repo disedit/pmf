@@ -37,7 +37,7 @@ const { humanDate, humanTime } = useDate()
           target="_blank"
           class="concert-info absolute flex flex-col bg-gray-500/70 inset-0 p-6 text-white leading-tight transition"
         >
-          <h3 class="font-semibold text-lg mb-2">
+          <h3 class="font-semibold text-lg mb-2 leading-[1.1]">
             {{ concert.artist }}
           </h3>
           <p class="text-base font-light xl:text-md">

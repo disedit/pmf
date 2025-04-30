@@ -20,29 +20,29 @@ function transformSlotProps(props) {
 
 <template>
   <section class="p-site md:py-24 flex flex-col items-center">
-    <h2 class="text-xl text-primary font-bold tracking-widest mb-8">
+    <h2 class="text-xl text-primary font-bold tracking-widest mb-8 leading-[1.1] text-center">
       {{ block.heading }}
     </h2>
 
     <ClientOnly>
       <VueCountdown :time="time" :transform="transformSlotProps" v-slot="{ days, hours, minutes, seconds }">
-        <div class="flex items-end tabular-nums text-3xl text-gray-500">
-          <div :class="['number', { 'wider': days >= 100 }]">
+        <div class="flex items-end tabular-nums text-xl md:text-3xl text-gray-500">
+          <div :class="['number w-[2em]', { 'w-[9em]': days >= 100 }]">
             <div class="label">Dias</div>
             <div class="value">{{ days }}</div>
           </div>
           <div class="colon">:</div>
-          <div class="number">
+          <div class="number w-[2em]">
             <div class="label">Hores</div>
             <div class="value">{{ hours }}</div>
           </div>
           <div class="colon">:</div>
-          <div class="number">
+          <div class="number w-[2em]">
             <div class="label">Minuts</div>
             <div class="value">{{ minutes }}</div>
           </div>
           <div class="colon">:</div>
-          <div class="number">
+          <div class="number w-[2em]">
             <div class="label">Segons</div>
             <div class="value">{{ seconds }}</div>
           </div>
@@ -55,13 +55,8 @@ function transformSlotProps(props) {
 <style scoped>
 .number {
   display: flex;
-  width: 8rem;
   flex-direction: column;
   align-items: center;
-
-  &.wider {
-    width: 9rem;
-  }
 
   .label {
     color: var(--color-gray-400);

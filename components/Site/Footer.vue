@@ -10,7 +10,7 @@ const { mediaUrl } = useUtils()
     </SiteMarquee>
     <div class="bg-primary p-12 flex flex-col gap-12">
       <div v-for="logos in settings.data.footer_logos" :key="logos.id">
-        <h2 class="font-semibold text-lg mb-6">{{ logos.label }}</h2>
+        <h2 class="font-semibold text-mdi mb-6">{{ logos.label }}</h2>
         <div class="flex flex-wrap gap-site md:gap-12 items-center">
           <NuxtImg
             v-for="logo in logos.logos"

@@ -25,7 +25,8 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="bg-white">
+    <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator color="#000" />
     <SiteNav />
     <NuxtPage />

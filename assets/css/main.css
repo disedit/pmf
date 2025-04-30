@@ -14,6 +14,7 @@
   --text-sm: clamp(0.8rem, 0.08vi + 0.78rem, 0.84rem);
   --text-base: clamp(1rem, 0.23vi + 0.94rem, 1.05rem);
   --text-md: clamp(1.19rem, 0.43vi + 1.15rem, 1.45rem);
+  --text-mdi: clamp(1.39rem, 0.57vi + 1.25rem, 1.75rem);
   --text-lg: clamp(1.56rem, 0.79vi + 1.36rem, 2rem);
   --text-xl: clamp(1.95rem, 1.29vi + 1.63rem, 2.66rem);
   --text-2xl: clamp(2.44rem, 2.02vi + 1.94rem, 3.55rem);

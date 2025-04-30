@@ -56,6 +56,9 @@ const { data: results } = await useAsyncData(
           },
           'blocks.spacer': {
             populate: '*'
+          },
+          'blocks.countdown': {
+            populate: '*'
           }
         },
     },

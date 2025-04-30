@@ -3,7 +3,7 @@ const settings = await useSettings()
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 min-h-navbar z-[1000] bg-white">
+  <header class="fixed top-0 left-0 right-0 min-h-navbar z-[10000] bg-white">
     <SiteMarquee :duration="settings.data.marquee_speed" background="bg-primary" padding="py-1">
       {{ settings.data.marquee_text }}
     </SiteMarquee>
