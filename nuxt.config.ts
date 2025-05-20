@@ -7,12 +7,12 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/eslint',
-    '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/strapi',
     '@nuxtjs/i18n',
-    'nuxt-strapi-blocks-renderer'
+    'nuxt-strapi-blocks-renderer',
+    '@nuxtjs/google-fonts',
   ],
 
   css: [
@@ -46,4 +46,13 @@ export default defineNuxtConfig({
       baseURL: 'https://pmf.disedit.com/'
     }
   },
+
+  googleFonts: {
+    families: {
+      'DM Sans': {
+        wght: '200..900',
+        ital: '200..700',
+      }
+    }
+  }
 })

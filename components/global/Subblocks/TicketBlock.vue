@@ -19,7 +19,7 @@ const showInfo = ref(false)
         :aria-expanded="showInfo ? 'true' : 'false'"
         :aria-controls="`${block.id}TicketInfo`"
       >
-        <Icon name="carbon:chevron-up" class="icon transition" />
+        <Icon name="carbon:chevron-down" class="icon transition" />
         {{ block.info_label }}
       </button>
       <Transition name="slide">

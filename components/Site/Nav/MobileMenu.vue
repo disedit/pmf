@@ -43,7 +43,7 @@ function toggleMenu() {
       <div v-if="menuOpen" class="fixed flex flex-col gap-site justify-evenly top-navbar left-0 right-0 bottom-0 z-[10000] bg-white p-site">
         <ul aria-label="Menu" class="gap-6 font-semibold text-2xl">
           <li v-for="item in menu" :key="item.id" class="leading-[1.1] py-3">
-            <NuxtLink :to="item.link" class="py-2">
+            <NuxtLink :to="item.link" class="py-2" @click="hideMenu">
               {{ item.label }}
             </NuxtLink>
           </li>
@@ -54,12 +54,12 @@ function toggleMenu() {
 
         <ul class="font-light text-md leading-tight">
           <li>
-            <a href="" target="_blank">
+            <a href="https://potries.org/" target="_blank">
               Ajuntament de Potries
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a href="https://turisme.potries.org/" target="_blank">
               Turisme Potries
             </a>
           </li>
@@ -73,14 +73,14 @@ function toggleMenu() {
 .line {
   display: block;
   border-top: 2px var(--color-black) solid;
-  width: 2rem;
+  width: 32px;
   transition: .5s ease;
   flex-shrink: 0;
 }
 
 .toggle[aria-expanded='true'] {
   .line-1 {
-    transform: translate(0, 425%) rotate(45deg);
+    transform: translate(0, 270%) rotate(45deg);
     transform-origin: center;
   }
 
