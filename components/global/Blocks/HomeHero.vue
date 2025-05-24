@@ -1,6 +1,4 @@
 <script setup>
-import { UtilsRichText } from '#components';
-
 defineProps({ block: { type: Object, required: true }})
 
 const img = useImage()
@@ -45,6 +43,20 @@ const { mediaUrl } = useUtils()
     }
 
     &:hover {
+      .text {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.splide__slide {
+  margin-left: -10px !important;
+}
+
+@media (hover: none) {
+  .marquee-scroller {
+    .item {
       .text {
         opacity: 1;
       }

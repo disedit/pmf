@@ -59,6 +59,9 @@ const { data: results } = await useAsyncData(
           },
           'blocks.countdown': {
             populate: '*'
+          },
+          'blocks.news': {
+            populate: '*'
           }
         },
     },

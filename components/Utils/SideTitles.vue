@@ -70,4 +70,10 @@ span {
   font-weight: 500;
   
 }
+
+@supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
+  .strip-titles {
+    transform: translate(-150%, -50%);
+  }
+}
 </style>

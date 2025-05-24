@@ -15,7 +15,7 @@ defineProps({ block: { type: Object, required: true }})
           'info-text p-site pe-12 md:py-16 md:px-24',
           { 'md:text-right': !card.inverted },
         ]">
-        <h3 class="text-xl font-semibold mb-6">
+        <h3 class="text-xl font-semibold mb-6 leading-[1.1] hyphens-auto">
           {{ card.heading }}
         </h3>
         <UtilsRichText

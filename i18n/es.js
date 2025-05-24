@@ -1,6 +1,7 @@
 export default {
   ctas: {
-    tickets: 'Entradas'
+    tickets: 'Entradas',
+    read: 'Read more'
   },
   filters: {
     all: 'todos'

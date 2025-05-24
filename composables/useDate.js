@@ -13,6 +13,11 @@ export const useDate = () => {
       return format(date, "HH:mm'h'", {
         locale: locales[locale],
       })
-    }
+    },
+    pressDate: (date, locale) => {
+      return format(date, 'dd LLLL y', {
+        locale: locales[locale],
+      })
+    },
   }
 }
