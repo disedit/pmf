@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     'nuxt-strapi-blocks-renderer',
     '@nuxtjs/google-fonts',
+    '@vueuse/nuxt'
   ],
 
   css: [

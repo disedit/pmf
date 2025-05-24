@@ -42,7 +42,7 @@ function toggleMenu() {
     <Transition name="fade">
       <div v-if="menuOpen" class="fixed flex flex-col gap-site justify-evenly top-navbar left-0 right-0 bottom-0 z-[10000] bg-white p-site">
         <ul aria-label="Menu" class="gap-6 font-semibold text-2xl">
-          <li v-for="item in menu" :key="item.id" class="leading-[1.1] py-3">
+          <li v-for="item in menu" :key="item.id" class="leading-[1.1] py-3 text-balance">
             <NuxtLink :to="item.link" class="py-2" @click="hideMenu">
               {{ item.label }}
             </NuxtLink>
