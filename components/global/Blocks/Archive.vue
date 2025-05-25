@@ -18,34 +18,36 @@ const carouselConfig = {
 </script>
 
 <template>
-  <section :class="[
-    {
-      'stacked-slides': props.block.stacked_slides,
-      'hoverable-slides': !props.block.stacked_slides
-    },
-    'my-12 md:my-24'
-  ]">
-    <h2 v-if="block.heading" class="text-center py-0 md:py-2 px-site text-lg font-bold text-balance leading-[1.1]">{{ block.heading }}</h2>
-    <Carousel v-bind="carouselConfig">
-      <Slide v-for="poster in block.posters" :key="poster" class="flex-col py-6">
-        <div class="slide-image-container relative flex items-center">
-          <NuxtImg
-            :src="mediaUrl(poster.picture.url)"
-            width="400"
-            class="slide-image"
-          />
-          <div v-if="poster.hover_heading || poster.hover_heading || poster.hover_details" class="hoverable-info flex flex-col gap-2 bg-gray-500/70 text-white">
-            <h4 class="text-lg font-semibold">{{ poster.hover_heading }}</h4>
-            <p class="text-md">{{ poster.hover_description }}</p>
-            <div class="mt-auto text-md whitespace-nowrap">{{ poster.hover_details }}</div>
+  <ClientOnly>
+    <section :class="[
+      {
+        'stacked-slides': props.block.stacked_slides,
+        'hoverable-slides': !props.block.stacked_slides
+      },
+      'my-12 md:my-24'
+    ]">
+      <h2 v-if="block.heading" class="text-center py-0 md:py-2 px-site text-lg font-bold text-balance leading-[1.1]">{{ block.heading }}</h2>
+      <Carousel v-bind="carouselConfig">
+        <Slide v-for="poster in block.posters" :key="poster" class="flex-col py-6">
+          <div class="slide-image-container relative flex items-center">
+            <NuxtImg
+              :src="mediaUrl(poster.picture.url)"
+              width="400"
+              class="slide-image"
+            />
+            <div v-if="poster.hover_heading || poster.hover_heading || poster.hover_details" class="hoverable-info flex flex-col gap-2 bg-gray-500/70 text-white">
+              <h4 class="text-md md:text-lg font-semibold">{{ poster.hover_heading }}</h4>
+              <p class="text-sm md:text-md">{{ poster.hover_description }}</p>
+              <div class="mt-auto text-sm md:text-md whitespace-nowrap">{{ poster.hover_details }}</div>
+            </div>
           </div>
-        </div>
-        <h3 class="text-lg font-semibold text-center mt-5 transiton">
-          {{ poster.label }}
-        </h3>
-      </Slide>
-    </Carousel>
-  </section>
+          <h3 class="text-lg font-semibold text-center mt-5 transiton">
+            {{ poster.label }}
+          </h3>
+        </Slide>
+      </Carousel>
+    </section>
+  </ClientOnly>
 </template>
 
 <style scoped>
@@ -162,6 +164,12 @@ const carouselConfig = {
     --slide-width: 47vw;
     --slide-height: 80vw;
     --padding: 1rem;
+  }
+
+  .carousel__slide--active {
+    .hoverable-info {
+      opacity: 1;
+    }
   }
 }
 </style>
