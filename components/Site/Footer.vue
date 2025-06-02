@@ -1,4 +1,11 @@
 <script setup>
+defineProps({
+  marqueeText: {
+    type: String,
+    default: ''
+  }
+})
+
 const settings = await useSettings()
 const { mediaUrl } = useUtils()
 </script>
@@ -6,7 +13,7 @@ const { mediaUrl } = useUtils()
 <template>
   <footer class="footer relative z-[100] text-white text-base">
     <SiteMarquee :duration="settings.data.marquee_speed" background="bg-gray-400" padding="py-2">
-      {{ settings.data.footer_marquee }}
+      {{ marqueeText }}
     </SiteMarquee>
     <div class="bg-primary p-12 flex flex-col gap-12">
       <div v-for="logos in settings.data.footer_logos" :key="logos.id">

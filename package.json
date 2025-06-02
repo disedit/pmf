@@ -31,5 +31,8 @@
     "vue-router": "^4.5.0",
     "vue3-carousel": "^0.15.0",
     "vue3-marquee": "^4.2.2"
+  },
+  "devDependencies": {
+    "@iconify-json/fa6-brands": "^1.2.5"
   }
 }

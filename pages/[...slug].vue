@@ -112,18 +112,22 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="min-h-viewport bg-white">
-    <UtilsDynamicBlocks
-      :blocks="page.blocks"
-    />
-    <UtilsCtas
-      v-if="page.ctas && page.ctas.length"
-      :ctas="page.ctas"
-      class="sticky bottom-0 p-site justify-center z-[1000]"
-    />
-    <UtilsSideTitles
-      :blocks="page.blocks"
-    />
-    <div v-html="styleOverride" />
-  </main>
+  <div>
+    <SiteNav :marquee-text="page.marquee_text_top || settings.data.marquee_text" />
+    <main class="min-h-viewport bg-white">
+      <UtilsDynamicBlocks
+        :blocks="page.blocks"
+      />
+      <UtilsCtas
+        v-if="page.ctas && page.ctas.length"
+        :ctas="page.ctas"
+        class="sticky bottom-0 p-site justify-center z-[1000]"
+      />
+      <UtilsSideTitles
+        :blocks="page.blocks"
+      />
+      <div v-html="styleOverride" />
+    </main>
+    <SiteFooter :marquee-text="page.marquee_text_bottom || settings.data.footer_marquee" />
+  </div>
 </template>

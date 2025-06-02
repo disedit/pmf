@@ -28,8 +28,6 @@ useHead({
   <div class="bg-white">
     <NuxtRouteAnnouncer />
     <NuxtLoadingIndicator color="#000" />
-    <SiteNav />
     <NuxtPage />
-    <SiteFooter />
   </div>
 </template>
