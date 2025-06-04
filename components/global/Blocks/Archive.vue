@@ -31,6 +31,7 @@ const carouselConfig = {
         <Slide v-for="poster in block.posters" :key="poster" class="flex-col py-6">
           <div class="slide-image-container relative flex items-center">
             <NuxtImg
+              v-if="poster.picture"
               :src="mediaUrl(poster.picture.url)"
               width="400"
               class="slide-image"
