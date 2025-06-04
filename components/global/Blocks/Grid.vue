@@ -10,6 +10,7 @@ const filteredConcerts = computed(() => {
 })
 
 const { humanDate, humanTime } = useDate()
+const { mediaUrl } = useUtils()
 </script>
 
 <template>
@@ -30,7 +31,7 @@ const { humanDate, humanTime } = useDate()
         v-for="concert in filteredConcerts"
         :key="concert.id"
         class="concert flex aspect-square bg-gray-100 relative bg-cover bg-center"
-        :style="{ backgroundImage: concert.picture ? `url(${img(concert.picture.url, { width: 800 })})` : null }"
+        :style="{ backgroundImage: concert.picture ? `url(${img(mediaUrl(concert.picture.url), { width: 800 })})` : null }"
       >
         <a
           :href="concert.cta_url"

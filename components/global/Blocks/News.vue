@@ -3,6 +3,7 @@ const props = defineProps({ block: { type: Object, required: true }})
 const { find } = useStrapi()
 const img = useImage()
 const { pressDate } = useDate()
+const { mediaUrl } = useUtils()
 
 const { data: stories } = await useAsyncData(
   'news',
@@ -24,7 +25,7 @@ const { data: stories } = await useAsyncData(
         v-for="story in stories.data"
         :key="story.id"
         class="story flex aspect-square bg-gray-100 relative bg-cover bg-center"
-        :style="{ backgroundImage: story.picture ? `url(${img(story.picture.url, { width: 800 })})` : null }"
+        :style="{ backgroundImage: story.picture ? `url(${img(mediaUrl(story.picture.url), { width: 800 })})` : null }"
       >
         <a
           :href="story.link"
