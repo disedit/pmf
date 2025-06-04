@@ -8,6 +8,12 @@ defineProps({
 
 const settings = await useSettings()
 const { mediaUrl } = useUtils()
+
+useHead({
+  script: [
+   { async: true, src: 'https://subscribe-forms.beehiiv.com/embed.js' }
+  ]
+})
 </script>
 
 <template>
@@ -62,6 +68,8 @@ const { mediaUrl } = useUtils()
       <div class="area-newsletter">
         <div class="leading-loose">
           Newsletter
+
+          <iframe src="https://subscribe-forms.beehiiv.com/a6a95638-3c24-43af-bcf2-68aabaf65592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: ; height: ; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
         </div>
       </div>
       <div class="area-legal flex xl:justify-end">
