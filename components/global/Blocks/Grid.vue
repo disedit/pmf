@@ -25,7 +25,7 @@ const { humanDate, humanTime } = useDate()
       class="my-12"
     />
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(450px,1fr))] gap-site md:gap-8">
+    <div class="grid md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-site md:gap-8">
       <article
         v-for="concert in filteredConcerts"
         :key="concert.id"
@@ -40,16 +40,16 @@ const { humanDate, humanTime } = useDate()
           <h3 class="font-semibold text-lg mb-2 leading-[1.1]">
             {{ concert.artist }}
           </h3>
-          <p class="text-base font-light xl:text-md">
+          <p class="text-base font-light">
             {{ concert.description }}
           </p>
-          <p class="mt-auto text-base font-medium xl:text-md">
+          <p class="mt-auto text-base font-medium">
             {{ humanDate(concert.date, $i18n.locale) }}
           </p>
-          <p class="text-base font-medium xl:text-md">
+          <p class="text-base font-medium">
             {{ humanTime(concert.date, $i18n.locale) }}
           </p>
-          <p class="text-base font-medium xl:text-md">
+          <p class="text-base font-medium">
             {{ concert.venue }}
           </p>
           <div class="mt-4">

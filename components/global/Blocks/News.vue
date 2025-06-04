@@ -19,7 +19,7 @@ const { data: stories } = await useAsyncData(
       {{ block.heading }}
     </h2>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(450px,1fr))] gap-site md:gap-8">
+    <div class="grid md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-site md:gap-8">
       <article
         v-for="story in stories.data"
         :key="story.id"
@@ -34,7 +34,7 @@ const { data: stories } = await useAsyncData(
           <h3 class="font-semibold text-lg mb-2 leading-[1.1]">
             {{ story.title }}
           </h3>
-          <p v-if="story.date" class="mt-auto text-base font-medium xl:text-md">
+          <p v-if="story.date" class="mt-auto text-base font-medium">
             {{ pressDate(story.date, $i18n.locale) }}
           </p>
           <div class="mt-4">
