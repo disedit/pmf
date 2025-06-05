@@ -21,7 +21,7 @@ useHead({
     <SiteMarquee :duration="settings.data.marquee_speed" background="bg-gray-400" padding="py-2">
       {{ marqueeText }}
     </SiteMarquee>
-    <div class="bg-primary p-12 flex flex-col gap-12">
+    <div class="bg-primary p-8 md:p-12 flex flex-col gap-12">
       <div v-for="logos in settings.data.footer_logos" :key="logos.id">
         <h2 class="font-semibold text-mdi mb-6">{{ logos.label }}</h2>
         <div class="flex flex-wrap gap-site md:gap-12 items-center">
@@ -35,7 +35,7 @@ useHead({
         </div>
       </div>
     </div>
-    <div class="bg-gray-900 footer-grid p-12 gap-12">
+    <div class="bg-gray-900 footer-grid p-8 md:p-12 gap-12">
       <div class="area-address flex flex-col gap-12 justify-between">
         <a href="http://potries.org/" target="_blank">
           <img
@@ -69,7 +69,7 @@ useHead({
         <div class="leading-loose">
           Newsletter
 
-          <iframe src="https://subscribe-forms.beehiiv.com/a6a95638-3c24-43af-bcf2-68aabaf65592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: ; height: ; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
+          <iframe src="https://subscribe-forms.beehiiv.com/a6a95638-3c24-43af-bcf2-68aabaf65592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 350px; height: auto; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
         </div>
       </div>
       <div class="area-legal flex xl:justify-end">
