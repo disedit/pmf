@@ -16,7 +16,7 @@ const { mediaUrl } = useUtils()
           { 'cursor-pointer': !!slide.link }
         ]"
         :data-to="slide.link"
-        :style="{ backgroundImage: slide.background ? `url(${img(mediaUrl(slide.background.url), { width: 800 })})` : null }"
+        :style="{ backgroundImage: slide.background ? `url(${img(mediaUrl(slide.background.url), { width: 1200 })})` : null }"
       >
         <UtilsRichText
           :content="slide.text"

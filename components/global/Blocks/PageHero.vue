@@ -32,7 +32,7 @@ const { mediaUrl } = useUtils()
       v-if="block.poster?.url"
       class="grid md:grid-cols-2 sticky top-navbar bg-primary md:z-[4] bg-cover"
       :style="{
-        backgroundImage: block.poster_background ? `url(${img(mediaUrl(block.poster_background.url), { width: 1400 })})` : null
+        backgroundImage: block.poster_background ? `url(${img(mediaUrl(block.poster_background.url), { width: 2000 })})` : null
       }"
     >
       <div />
