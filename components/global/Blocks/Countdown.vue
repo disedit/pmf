@@ -28,22 +28,22 @@ function transformSlotProps(props) {
       <VueCountdown :time="time" :transform="transformSlotProps" v-slot="{ days, hours, minutes, seconds }">
         <div class="flex items-end tabular-nums text-xl md:text-3xl text-gray-500">
           <div :class="['number w-[2em]', { 'w-[9em]': days >= 100 }]">
-            <div class="label">Dias</div>
+            <div class="label">{{ $t('countdown.days') }}</div>
             <div class="value">{{ days }}</div>
           </div>
           <div class="colon">:</div>
           <div class="number w-[2em]">
-            <div class="label">Hores</div>
+            <div class="label">{{ $t('countdown.hours') }}</div>
             <div class="value">{{ hours }}</div>
           </div>
           <div class="colon">:</div>
           <div class="number w-[2em]">
-            <div class="label">Minuts</div>
+            <div class="label">{{ $t('countdown.minutes') }}</div>
             <div class="value">{{ minutes }}</div>
           </div>
           <div class="colon">:</div>
           <div class="number w-[2em]">
-            <div class="label">Segons</div>
+            <div class="label">{{ $t('countdown.seconds') }}</div>
             <div class="value">{{ seconds }}</div>
           </div>
         </div>

@@ -5,5 +5,11 @@ export default {
   },
   filters: {
     all: 'tots'
+  },
+  countdown: {
+    days: 'Dies',
+    hours: 'Hores',
+    minutes: 'Minuts',
+    seconds: 'Segons'
   }
 }

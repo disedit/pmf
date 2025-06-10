@@ -5,5 +5,11 @@ export default {
   },
   filters: {
     all: 'all'
+  },
+  countdown: {
+    days: 'Days',
+    hours: 'Hours',
+    minutes: 'Minutes',
+    seconds: 'Seconds'
   }
 }
